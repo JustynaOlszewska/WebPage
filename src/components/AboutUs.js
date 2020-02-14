@@ -2,7 +2,7 @@ import React from 'react';
 import img10 from "../img/man-537136_640.jpg";
 
 const AboutUs = (props) => {
-    return ( 
+    return (  
         <section id="aboutUs" className="aboutUs">
         <h3 className="everyMiddleHeading">About us</h3>
         <h6 className="everySmallestHeading">Meet the team</h6>
