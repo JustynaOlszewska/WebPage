@@ -1,0 +1,112 @@
+@import 'mixins';
+.header {
+  position: relative;
+  @include size(100%, 400px);
+  max-height: 400px;
+  background-size: cover;
+  background-position: center;
+  transition: 1s;
+  &__logo {
+    @include position($position: absolute, $left:0,  $top: 1%);
+    z-index: 1;
+    @include size(30%, 100px);
+    margin: 1% 1%;
+
+    &-img1 {
+      @include position($position: absolute, $left:30%);
+      z-index: 3;
+    }
+
+    &-img2 {
+      @include position($position:absolute, $left:27%, $top: 13%);
+      z-index: 2;
+    }
+
+    &-img3 {
+      @include position($position: absolute, $left:28%, $top: 9%);
+      width: 23px;
+      // border-radius: 5%;
+      z-index: 1;
+      transform: rotate(-60deg);
+    }
+    &-triangle {
+      @include position($position: absolute, $left:28%,$top: -2%);
+      @include size(0, 0);
+      border-bottom: 30px solid rgb(255, 0, 119);
+      border-top: 20px solid transparent;
+      border-left: 15px solid transparent;
+      border-right: 15px solid transparent;
+      border-radius: 30%;
+      transform: rotate(-60deg);
+      z-index: 4;
+      opacity: 0.7;
+    }
+
+    &-heading {
+      @include position($position: absolute, $left:50%);
+      color: white;
+      font-size: 2rem;
+      margin: 1% 1% 1% 1%;
+    }
+  }
+  &__menu {
+    @include position($position: absolute, $right:0, $top: 1%);
+    z-index: 1;
+    @include size(57%, 100px);
+    margin: 1% 4% 0 1%;
+    .list {
+       @include position($position: absolute, $right:5px);
+       width: 100%;
+       @include flexi($display: flex, $justify-content: space-between);
+      list-style-type: none;
+      &__element {
+        width: 20%;
+        text-align: right;
+        &-link {
+          width: 100%;
+          display: block;
+          text-decoration: none;
+          color: rgb(255, 255, 255);
+        }
+      }
+    }
+  }
+
+  &__heading {
+    @include position($position: absolute, $left:50%, $top: 30%);
+    @include size(100%, 200px);
+    text-align: center;
+    font-size: 3rem;
+    color: rgb(255, 255, 255);
+    transform: translateX(-50%);
+    z-index: 1;
+  }
+}
+.allButtons {
+  @include position($position: absolute, $left:50%, $top: 75%);
+  transform: translateX(-50%);
+  padding: 10px 40px;
+  background-color: rgb(192, 115, 15);
+  border-radius: 25px/30px;
+  border: 0;
+  z-index: 1;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+.dots {
+  @include position($position: absolute, $left:50%, $top: 90%);
+  z-index: 1;
+  margin-bottom: 2%;
+  transform: translateX(-50%);
+  &__span {
+    display: inline-block;
+    top: 80%;
+    @include size(8px, 8px);
+    border-radius: 50%;
+    border: 2px solid white;
+    margin: 10px 10px;
+  }
+  .active {
+    background-color: rgb(0, 0, 0);
+  }
+}

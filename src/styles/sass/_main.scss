@@ -1,0 +1,195 @@
+@import 'mixins';
+@mixin middleHeading {
+  text-align: center;
+  margin:5% 0 1% 0;
+}
+@mixin position($position, $left:null, $right:null, $top: null, $bottom: null) {
+  position: $position;
+  left:$left;
+  right: $right;
+  top: $top;
+  bottom: $bottom;
+  }
+  @mixin size($width,$height) {
+    width: $width;
+    height: $height;
+      }
+      @mixin flexi($display: flex, $justify-content: null, $flex-direction: row) {
+          display: $display;
+      justify-content: $justify-content;
+      flex-direction: $flex-direction;
+      }
+    
+.main {
+  @include flexi($display: flex, $justify-content: center, $flex-direction: column);
+  .everyMiddleHeading {
+    @include middleHeading;
+  }
+  .everySmallestHeading {
+    text-align: center;
+    margin-top: 1%;
+    color: purple;
+  }
+  .ourServices {
+    @include flexi($display: flex,$flex-direction: column);
+    margin-bottom: 1%;
+    &__allFigure {
+      @include flexi($display: flex, $justify-content: center);
+      text-align: center;
+      .ourServices__container {
+        background-color: white;
+        border-radius: 5%;
+        border: 2px solid rgb(207, 198, 198);
+        margin: 1%;
+        transition: 0.5s;
+        .ourServices__image {
+          margin-top: 13%;
+        }
+        .ourServices__text {
+          font-size: 0.8rem;
+          padding: 0 1% 0 1%;
+        }
+      }
+      .ourServices__container:hover {
+        box-shadow: 0 0 15px 2px rgb(207, 198, 198);
+      }
+    }
+  }
+  .aboutUs {
+    @include flexi($display: flex, $flex-direction: column);
+    background-color: rgb(214, 211, 211);
+    width: 100;
+
+    &__allFigure {
+      @include flexi($display: flex, $justify-content: center);
+      text-align: center;
+
+      .aboutUs__container {
+        background-color: rgb(214, 211, 211);
+        border-radius: 5%;
+        width: 150px;
+        margin: 1%;
+        transition: 0.5s;
+        position: relative;
+        z-index: 0;
+        .aboutUs__image {
+          margin-top: 13%;
+          @include size(100%, auto);
+          border-radius: 7%;
+          z-index: 0;
+        }
+        .circle {
+          @include position($position: absolute, $left:50%, $bottom: 20%);
+          transform: translateX(-50%);
+          @include size(15px, 15px);
+          background-color: rgb(69, 69, 204);
+          border-radius: 50%;
+
+          &__tooltiptext {
+            visibility: hidden;
+            width: 120px;
+            background-color: rgb(0, 0, 0);
+            color: #fff;
+            text-align: center;
+            padding: 5px 0;
+            border-radius: 6px;
+            @include position($position: absolute, $left:50%, $bottom: 125%);
+            z-index: 1;
+            margin-left: -60px;
+            opacity: 0;
+            transition: opacity 0.3s;
+          }
+          .circle__tooltiptext::after {
+            content: "";
+            z-index: 1;
+            @include position($position: absolute, $left:50%, $top: 100%);
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: black transparent transparent transparent;
+          }
+        }
+        .circle:hover .circle__tooltiptext {
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+    }
+  }
+  .ourCustomers {
+    position: relative;
+    &__quote {
+      @include position($position: absolute, $left:50%);
+      transform: translateX(-50%);
+    }
+    &__mainPart {
+      @include flexi($display: flex, $justify-content: center);
+      position: relative;
+      &-arrowLeft {
+        @include size(40px, 50px);
+        @include position($position: absolute, $left:15%, $right:null, $top: 25%, $bottom: null);
+      }
+      .ourCustomers__mainPart-arrowRight {
+        @include size(40px, 50px);
+        @include position($position: absolute, $right:15%, $top: 25%);
+      }
+      .ourCustomers__figure {
+        text-align: center;
+        flex-basis: 50%;
+        &-text::first-letter {
+          color: red;
+        }
+        .dots {
+          @include position($position: relative, $top: 5%);
+          height: 30px;
+          margin-top: 1%;
+
+          &__span {
+            @include position($position: absolute, $top: 0);
+            display: inline-block;
+            @include size(8px, 8px);
+            border-radius: 50%;
+            margin: 10px 10px;
+            background-color: grey;
+          }
+          .dots__span.active {
+            background-color: rgb(0, 0, 0);
+          }
+
+          .dots__span:first-child {
+            left: 40%;
+          }
+          .dots__span:nth-child(2) {
+            left: 50%;
+          }
+          .dots__span:last-child {
+            left: 60%;
+          }
+        }
+        &-containerForWoman {
+          @include flexi($display: flex, $justify-content: center);
+          .onlyPicture {
+            @include size(80px, 80px);
+            overflow: hidden;
+            border-radius: 50%;
+            .ourCustomers__figure-woman {
+              @include size(80px, auto);
+            }
+          }
+
+          .ourCustomers__figure-dataWomen {
+            display: inline-block;
+            margin-left: 2%;
+
+            &-bigerHeading {
+              margin-bottom: 1%;
+            }
+            &-smallerHeading {
+              margin-top: 1%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

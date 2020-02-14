@@ -1,0 +1,287 @@
+.main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.main .everyMiddleHeading {
+  text-align: center;
+  margin: 5% 0 1% 0;
+}
+
+.main .everySmallestHeading {
+  text-align: center;
+  margin-top: 1%;
+  color: purple;
+}
+
+.main .ourServices {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 1%;
+}
+
+.main .ourServices__allFigure {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  text-align: center;
+}
+
+.main .ourServices__allFigure .ourServices__container {
+  background-color: white;
+  border-radius: 5%;
+  border: 2px solid #cfc6c6;
+  margin: 1%;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.main .ourServices__allFigure .ourServices__container .ourServices__image {
+  margin-top: 13%;
+}
+
+.main .ourServices__allFigure .ourServices__container .ourServices__text {
+  font-size: 0.8rem;
+  padding: 0 1% 0 1%;
+}
+
+.main .ourServices__allFigure .ourServices__container:hover {
+  -webkit-box-shadow: 0 0 15px 2px #cfc6c6;
+          box-shadow: 0 0 15px 2px #cfc6c6;
+}
+
+.main .aboutUs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #d6d3d3;
+  width: 100;
+}
+
+.main .aboutUs__allFigure {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  text-align: center;
+}
+
+.main .aboutUs__allFigure .aboutUs__container {
+  background-color: #d6d3d3;
+  border-radius: 5%;
+  width: 150px;
+  margin: 1%;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  position: relative;
+  z-index: 0;
+}
+
+.main .aboutUs__allFigure .aboutUs__container .aboutUs__image {
+  margin-top: 13%;
+  width: 100%;
+  height: auto;
+  border-radius: 7%;
+  z-index: 0;
+}
+
+.main .aboutUs__allFigure .aboutUs__container .circle {
+  position: absolute;
+  left: 50%;
+  bottom: 20%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 15px;
+  height: 15px;
+  background-color: #4545cc;
+  border-radius: 50%;
+}
+
+.main .aboutUs__allFigure .aboutUs__container .circle__tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  position: absolute;
+  left: 50%;
+  bottom: 125%;
+  z-index: 1;
+  margin-left: -60px;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+
+.main .aboutUs__allFigure .aboutUs__container .circle .circle__tooltiptext::after {
+  content: "";
+  z-index: 1;
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+
+.main .aboutUs__allFigure .aboutUs__container .circle:hover .circle__tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.main .ourCustomers {
+  position: relative;
+}
+
+.main .ourCustomers__quote {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.main .ourCustomers__mainPart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  position: relative;
+}
+
+.main .ourCustomers__mainPart-arrowLeft {
+  width: 40px;
+  height: 50px;
+  position: absolute;
+  left: 15%;
+  top: 25%;
+}
+
+.main .ourCustomers__mainPart .ourCustomers__mainPart-arrowRight {
+  width: 40px;
+  height: 50px;
+  position: absolute;
+  right: 15%;
+  top: 25%;
+}
+
+.main .ourCustomers__mainPart .ourCustomers__figure {
+  text-align: center;
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+}
+
+.main .ourCustomers__mainPart .ourCustomers__figure-text::first-letter {
+  color: red;
+}
+
+.main .ourCustomers__mainPart .ourCustomers__figure .dots {
+  position: relative;
+  top: 5%;
+  height: 30px;
+  margin-top: 1%;
+}
+
+.main .ourCustomers__mainPart .ourCustomers__figure .dots__span {
+  position: absolute;
+  top: 0;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin: 10px 10px;
+  background-color: grey;
+}
+
+.main .ourCustomers__mainPart .ourCustomers__figure .dots .dots__span.active {
+  background-color: black;
+}
+
+.main .ourCustomers__mainPart .ourCustomers__figure .dots .dots__span:first-child {
+  left: 40%;
+}
+
+.main .ourCustomers__mainPart .ourCustomers__figure .dots .dots__span:nth-child(2) {
+  left: 50%;
+}
+
+.main .ourCustomers__mainPart .ourCustomers__figure .dots .dots__span:last-child {
+  left: 60%;
+}
+
+.main .ourCustomers__mainPart .ourCustomers__figure-containerForWoman {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.main .ourCustomers__mainPart .ourCustomers__figure-containerForWoman .onlyPicture {
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.main .ourCustomers__mainPart .ourCustomers__figure-containerForWoman .onlyPicture .ourCustomers__figure-woman {
+  width: 80px;
+  height: auto;
+}
+
+.main .ourCustomers__mainPart .ourCustomers__figure-containerForWoman .ourCustomers__figure-dataWomen {
+  display: inline-block;
+  margin-left: 2%;
+}
+
+.main .ourCustomers__mainPart .ourCustomers__figure-containerForWoman .ourCustomers__figure-dataWomen-bigerHeading {
+  margin-bottom: 1%;
+}
+
+.main .ourCustomers__mainPart .ourCustomers__figure-containerForWoman .ourCustomers__figure-dataWomen-smallerHeading {
+  margin-top: 1%;
+}
+/*# sourceMappingURL=main.css.map */

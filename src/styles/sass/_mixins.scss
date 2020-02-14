@@ -1,0 +1,23 @@
+@mixin middleHeading {
+    text-align: center;
+    margin: 5% 0 1% 0;
+}
+
+@mixin size($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin flexi($display: flex, $justify-content: null, $flex-direction: row) {
+    display: $display;
+    justify-content: $justify-content;
+    flex-direction: $flex-direction;
+}
+
+@mixin position($position, $left:null, $right:null, $top: null, $bottom: null) {
+    position: $position;
+    left: $left;
+    right: $right;
+    top: $top;
+    bottom: $bottom;
+}
