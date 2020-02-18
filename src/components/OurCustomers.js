@@ -2,7 +2,10 @@ import React from 'react';
 import img13 from "../img/icons8-quote-left-64.png";
 import img12 from "../img/icons8-chevron-right-30.png";
 import img11 from "../img/icons8-chevron-left-30.png";
+
+
 const OurCustomers = (props) => {
+
     return ( 
 <section id="customers" className="ourCustomers">
         <h3 className="everyMiddleHeading">Our customers</h3>
@@ -53,6 +56,7 @@ const OurCustomers = (props) => {
                     ></span>
                   </div>
                 </figure>
+
                 <img
                   onClick={()=>props.click('right')}
                   className="ourCustomers__mainPart-arrowRight"

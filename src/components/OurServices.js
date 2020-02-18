@@ -1,5 +1,6 @@
 import React from 'react';
 import AllFigure from "./AllFigure"
+import {allFigureOurServices} from "../data/allFigureOurServices"
 const OurServices = (props) => {
 
     return (         
@@ -7,7 +8,7 @@ const OurServices = (props) => {
             
         <h3 className="everyMiddleHeading">Our services</h3>
         <h6 className="everySmallestHeading">What we can do</h6>
-<AllFigure allFigureOurServices={props.allFigureOurServices} />
+<AllFigure allFigureOurServices={allFigureOurServices} />
         
       </section>
      );

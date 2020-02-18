@@ -4,7 +4,7 @@ import "../styles/sass/_header.scss";
 import img1 from "../img/icons8-triangle-arrow-48 (1).png";
 import img2 from "../img/icons8-triangle-arrow-48 (2).png";
 import img3 from "../img/icons8-triangle-arrow-48.png";
-
+import {nameElementList} from "../data/nameElementList"
 
 const Header = (props) => {
     return ( 
@@ -26,7 +26,7 @@ const Header = (props) => {
 
           <h4 className="header__logo-heading">olusio</h4>
         </div>
-        <List nameElementList={props.nameElementList}/>
+        <List nameElementList={nameElementList}/>
        
         <a href="http://www.wp.pl" className="allButtons">
           Know more
