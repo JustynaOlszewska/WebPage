@@ -26,7 +26,7 @@ class Main extends Component {
       }
 
      changeSlideArrow = () => {
-      
+      console.log()
         this.index++;
         if (this.index < slider.length) {
           this.setState({
