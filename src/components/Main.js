@@ -15,9 +15,7 @@ class Main extends Component {
       image: img14,
       bigerHeading: " Joanna Stanley",
       smallerHeading: "  Big Data Company",
-      textInput: "",
-      emailInput: "",
-      textareaInput: ""
+    
      }
      index = 0;
 

@@ -17,7 +17,9 @@ class App extends Component {
     backgroundImage: `url(${img4})`,
 
     active: true,
-    
+    textInput: "",
+    emailInput: "",
+    textareaInput: ""
   };
 
 
@@ -83,15 +85,7 @@ class App extends Component {
             backgroundImage={backgroundImage}
             active={active}
           />
-          <Main
-        
-            // click={this.changeSlideClick}
-            // text={text}
-            // image={image}
-            // bigerHeading={bigerHeading}
-            // smallerHeading={smallerHeading}
-            // index={this.index}
-          />
+          <Main/>
           <Footer
             changeArea={this.handleAreaChange}
             textareaInput={textareaInput}

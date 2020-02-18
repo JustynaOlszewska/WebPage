@@ -4,6 +4,7 @@ import img1 from "../img/icons8-triangle-arrow-48 (1).png";
 import img2 from "../img/icons8-triangle-arrow-48 (2).png";
 import img3 from "../img/icons8-triangle-arrow-48.png";
 import img17 from "../img/icons8-up-24.png";
+
 const Footer = (props) => {
     return ( 
         <footer id="contact" className="footer">
