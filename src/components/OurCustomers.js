@@ -1,8 +1,5 @@
 import React from 'react';
-import img13 from "../img/icons8-quote-left-64.png";
-import img12 from "../img/icons8-chevron-right-30.png";
-import img11 from "../img/icons8-chevron-left-30.png";
-
+import {listArrowQuote} from "../data/arrowAndQuote"
 
 const OurCustomers = (props) => {
 
@@ -10,12 +7,12 @@ const OurCustomers = (props) => {
 <section id="customers" className="ourCustomers">
         <h3 className="everyMiddleHeading">Our customers</h3>
         <h6 className="everySmallestHeading">Testimonials</h6>
-        <img className="ourCustomers__quote" src={img13} alt="quote" />
+        <img className="ourCustomers__quote" src={listArrowQuote[0].img13} alt="quote" />
         <div className="ourCustomers__mainPart">
           <img
             onClick={()=>props.click('left')}
             className="ourCustomers__mainPart-arrowLeft"
-            src={img11}
+            src={listArrowQuote[0].img11}
             alt="arrowLeft"
           />
 
@@ -60,7 +57,7 @@ const OurCustomers = (props) => {
                 <img
                   onClick={()=>props.click('right')}
                   className="ourCustomers__mainPart-arrowRight"
-                  src={img12}
+                  src={listArrowQuote[0].img12}
                   alt="arrowRight"
                   type="right"
                 />

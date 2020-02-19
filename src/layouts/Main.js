@@ -1,33 +1,40 @@
 import React, {Component} from 'react';
 import "../styles/sass/_main.scss";
-import OurServices from "./OurServices";
-import AboutUs from "./AboutUs";
-import OurCustomers from "./OurCustomers";
+import OurServices from "../components/OurServices";
+import AboutUs from "../components/AboutUs";
+import OurCustomers from "../components/OurCustomers";
 import {allFigureOurServices} from "../data/allFigureOurServices"
 import {slider} from "../data/slider"
 
-import img14 from "../img/girl-1208207_640.jpg";
+
 
 class Main extends Component {
+  
     state = { 
-        text:
-        "1 Lorem ipsum dolor sit amet consectetur adipisicing elit Eos soluta doloribus ea officia veritatis, nostrumLorem ipsum dolor sit amet consectetur adipisicing elit Eos soluta doloribus ea officia veritatis, nostrum cupiditate aliquid exercitationem, accusamus autem et quinam ipsa nihil dolore adoloremque quis placeat Lorem,ipsum dolor sit amet consectetur adipisicing elit. Hic odioex fugit ullam corrupti possimus. Eaque neque voluptate suntvoluptatum ex modi nemo inventore aliquid, distinctionesciunt quidem quibusdam magn",
-      image: img14,
-      bigerHeading: " Joanna Stanley",
-      smallerHeading: "  Big Data Company",
-    
+       slider: [...slider],
+      
+        text:slider[0].text,
+      image: slider[0].img,
+      bigerHeading: slider[0].bigerHeading,
+      smallerHeading: slider[0].smallerHeading,
+     
      }
      index = 0;
 
      componentDidMount() {  
         this.arrowInterval = setInterval(this.changeSlideArrow, 3000);
       }
-
+      getData() {
+        this.setState({
+          slider: [...slider]
+        });
+      }
      changeSlideArrow = () => {
-      console.log()
+   console.log(this.state.slider)
         this.index++;
         if (this.index < slider.length) {
           this.setState({
+        
                  image: slider[this.index].img, 
             text: slider[this.index].text,
             bigerHeading: slider[this.index].bigerHeading,
@@ -73,12 +80,12 @@ class Main extends Component {
         clearInterval(this.arrowInterval);
       }
     render() { 
-       
+     console.log(this.state.text)
         return (  
             <main className="main">
             <OurServices allFigureOurServices={allFigureOurServices}/>
 <AboutUs />
-<OurCustomers  slider={slider} index={this.index} smallerHeading={this.state.smallerHeading}bigerHeading={this.state.bigerHeading} image={this.state.image} text={this.state.text} click={this.changeSlideClick}/>
+<OurCustomers  index={this.index} smallerHeading={this.state.smallerHeading}bigerHeading={this.state.bigerHeading} image={this.state.image} text={this.state.text} click={this.changeSlideClick}/>
           </main>
         );
     }
