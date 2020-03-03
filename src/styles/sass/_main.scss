@@ -128,10 +128,12 @@
       &-arrowLeft {
         @include size(40px, 50px);
         @include position($position: absolute, $left:15%, $right:null, $top: 25%, $bottom: null);
+        cursor:pointer;
       }
       .ourCustomers__mainPart-arrowRight {
         @include size(40px, 50px);
         @include position($position: absolute, $right:15%, $top: 25%);
+        cursor: pointer;
       }
       .ourCustomers__figure {
         text-align: center;

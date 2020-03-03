@@ -30,7 +30,7 @@ class Main extends Component {
         });
       }
      changeSlideArrow = () => {
-   console.log(this.state.slider)
+  //  console.log(this.state.slider)
         this.index++;
         if (this.index < slider.length) {
           this.setState({
@@ -80,7 +80,7 @@ class Main extends Component {
         clearInterval(this.arrowInterval);
       }
     render() { 
-     console.log(this.state.text)
+    //  console.log(this.state.text)
         return (  
             <main className="main">
             <OurServices allFigureOurServices={allFigureOurServices}/>

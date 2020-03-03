@@ -1,12 +1,13 @@
 @import 'mixins';
 
 .footer {
+  // background-color: black;
   background-color: rgb(6, 6, 88);
   @include flexi($display: flex, $flex-direction: column);
   width: 100%;
   overflow: hidden;
   margin-top: 1%;
-
+ 
   .line {
     border: 0.6px solid rgb(255, 255, 255);
     width: 100%;
@@ -73,6 +74,7 @@
         text-align: center;
         margin: 0 0 0 auto;
         outline: none;
+        cursor: pointer;
       }
     }
 

@@ -1,5 +1,5 @@
-import img4 from "../img/img1.jpg";
-import img5 from "../img/img2.jpg";
+import img4 from "../img/keyboard1.jpg";
+import img5 from "../img/keyboard2.jpg";
 
 export const imagesToHeader = [{
     img4,

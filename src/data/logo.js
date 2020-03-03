@@ -3,6 +3,4 @@ import img2 from "../img/icons8-triangle-arrow-48 (2).png";
 import img3 from "../img/icons8-triangle-arrow-48.png";
 
 
-export const logoImages=[
-{img1, img2, img3}
-]
+export const logoImages=[img1,img2,img3]

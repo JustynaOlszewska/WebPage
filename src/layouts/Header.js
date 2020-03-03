@@ -41,7 +41,7 @@ const {active, imagesdataToHeader} = this.state
       return(
         <img
         className="header__logo-img1"
-        src={image.img1}
+        src={image}
         alt="img1"
       />
       )
