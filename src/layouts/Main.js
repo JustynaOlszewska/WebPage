@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
 import "../styles/sass/_main.scss";
+import {slider} from "../data/slider"
+
 import OurServices from "../components/OurServices";
 import AboutUs from "../components/AboutUs";
 import OurCustomers from "../components/OurCustomers";
 import {allFigureOurServices} from "../data/allFigureOurServices"
-import {slider} from "../data/slider"
 
 
 

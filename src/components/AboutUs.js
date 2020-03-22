@@ -1,12 +1,12 @@
 import React from 'react';
-import img10 from "../img/man-537136_640.jpg";
+import img10 from "../img/man-537136_640.webp";
 
 import {name} from "../data/pesonList"
 const AboutUs = () => {
   const nameImgList = name.map(person=> {
     return (
       <figure className="aboutUs__container aboutUs__container-image">
-    <img className="aboutUs__image" src={img10} alt="man" />
+    <img className="aboutUs__image" src={img10} loading="lazy" alt="man" />
     <div className="circle">
       <span className="circle__tooltiptext">Project manager</span>
     </div>

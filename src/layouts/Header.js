@@ -1,22 +1,25 @@
+
 import React, { Component } from "react";
-import List from "../components/List";
 import "../styles/sass/_header.scss";
-// import Slider from "react-slick";
-import { logoImages } from "../data/logo";
 import { imagesToHeader } from "../data/image";
+import { logoImages } from "../data/logo";
+import List from "../components/List";
 import { nameElementList } from "../data/nameElementList";
+
+// import Slider from "react-slick";
+
+
 class Header extends Component {
   state = {
     active: true,
-    imagesdataToHeader: [...imagesToHeader]
+
+   
   };
 
-  getData() {
-    this.setState({
-      imagesdataToHeader: [...imagesToHeader]
-    });
-  }
+
   componentDidMount() {
+
+       
     this.changeSlideTop = setInterval(this.changeSlide, 3000);
   }
 
@@ -36,29 +39,36 @@ class Header extends Component {
     clearInterval(this.changeSlideTop);
   }
   render() {
-const {active, imagesdataToHeader} = this.state
+const {active} = this.state
+
     const newLogoImages = logoImages.map(image=> {
       return(
         <img
         className="header__logo-img1"
         src={image}
         alt="img1"
+       
       />
       )
     })
+   
 
     return (
       <header
         className="header"
+
         style={
+
          active
-            ? {
-                backgroundImage: `url(${imagesdataToHeader[0].img4})`
+          ? {
+              backgroundImage: `url(${imagesToHeader[0].img4})`
+           
               }
             : {
-                backgroundImage: `url(${imagesdataToHeader[0].img5})`
+              backgroundImage: `url(${imagesToHeader[0].img5})`
+ 
               }
-              
+             
         }
       >
         <h1 name="gora" className="header__heading">

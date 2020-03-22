@@ -7,12 +7,13 @@ const OurCustomers = (props) => {
 <section id="customers" className="ourCustomers">
         <h3 className="everyMiddleHeading">Our customers</h3>
         <h6 className="everySmallestHeading">Testimonials</h6>
-        <img className="ourCustomers__quote" src={listArrowQuote[0].img13} alt="quote" />
+        <img className="ourCustomers__quote" src={listArrowQuote[0].img13} loading="lazy" alt="quote" />
         <div className="ourCustomers__mainPart">
           <img
             onClick={()=>props.click('left')}
             className="ourCustomers__mainPart-arrowLeft"
             src={listArrowQuote[0].img11}
+            loading="lazy"
             alt="arrowLeft"
           />
 
@@ -23,6 +24,7 @@ const OurCustomers = (props) => {
                       <img
                         className="ourCustomers__figure-woman"
                         src={props.image}
+                        loading="lazy"
                         alt="woman"
                       />
                     </div>
@@ -58,6 +60,7 @@ const OurCustomers = (props) => {
                   onClick={()=>props.click('right')}
                   className="ourCustomers__mainPart-arrowRight"
                   src={listArrowQuote[0].img12}
+                  loading="lazy"
                   alt="arrowRight"
                   type="right"
                 />
