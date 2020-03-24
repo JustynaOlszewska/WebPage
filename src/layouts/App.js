@@ -1,11 +1,9 @@
 import React, {Fragment } from "react";
-
 import Header from "../layouts/Header";
 import Main from "../layouts/Main";
 import Footer from "../layouts/Footer";
 
 import "../styles/sass/_mixins.scss";
-
 import "../styles/sass/all.scss";
 
 

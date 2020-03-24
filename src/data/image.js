@@ -1,5 +1,5 @@
-import img4 from "../img/keyboard1.webp";
-import img5 from "../img/keyboard2.webp";
+import img4 from "../img/keyboard1.jpg";
+import img5 from "../img/keyboard2.jpg";
 
 export const imagesToHeader = [{
     img4,
