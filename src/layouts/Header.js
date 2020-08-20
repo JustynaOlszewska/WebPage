@@ -8,8 +8,6 @@ import List from "../components/List";
 import { nameElementList } from "../data/nameElementList";
 
 
-
-
 class Header extends Component {
 
   render() {

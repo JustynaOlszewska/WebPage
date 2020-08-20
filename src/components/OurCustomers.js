@@ -2,11 +2,11 @@ import React from 'react';
 import {listArrowQuote} from "../data/arrowAndQuote"
 
 const OurCustomers = (props) => {
-
+console.log(props.image)
     return ( 
 <section id="customers" className="ourCustomers">
-        <h3 className="everyMiddleHeading">Our customers</h3>
-        <h6 className="everySmallestHeading">Testimonials</h6>
+        <h1 className="everyMiddleHeading">Our customers</h1>
+        <h4 className="everySmallestHeading">Testimonials</h4>
         <img className="ourCustomers__quote" src={listArrowQuote[0].img13} loading="lazy" alt="quote" />
         <div className="ourCustomers__mainPart">
           <img
