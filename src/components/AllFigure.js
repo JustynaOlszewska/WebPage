@@ -1,6 +1,7 @@
 import React from 'react';
 
 const AllFigure = (props) => {
+  
     let newAllFigure = props.allFigureOurServices.map(element=> {
         return(
             <figure key={element.texth4} className="ourServices__container">

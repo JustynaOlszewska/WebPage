@@ -1,5 +1,5 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
+
 body {
     box-sizing: border-box;
     margin: 0;
@@ -7,10 +7,23 @@ body {
     font-size: 16px;
     min-height: 100vh;
     max-width: 100%;
-    font-family: 'Libre Baskerville', serif;;
+    font-family: 'Libre Baskerville', serif;
+    background-color: rgb(214, 211, 211);
 
-.wrapper {
-    display: flex;
-flex-direction: column;
-}
+   
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        margin: auto;
+        background-color: white;
+        border: 1px solid white;
+
+        @media (max-width: 1441px) {
+            width: 100%;
+
+        }
+    }
+  
+
 }

@@ -1,11 +1,14 @@
 import React, {Component} from 'react';
 import "../styles/sass/_main.scss";
 import {slider} from "../data/slider"
-
-import OurServices from "../components/OurServices";
-import AboutUs from "../components/AboutUs";
-import OurCustomers from "../components/OurCustomers";
 import {allFigureOurServices} from "../data/allFigureOurServices"
+
+const OurServices = React.lazy(() => import('../components/OurServices'));
+
+const AboutUs = React.lazy(() => import('../components/AboutUs'));
+
+const OurCustomers = React.lazy(() => import('../components/OurCustomers'));
+
 
 
 
@@ -81,7 +84,6 @@ class Main extends Component {
         clearInterval(this.arrowInterval);
       }
     render() { 
-    //  console.log(this.state.text)
         return (  
             <main className="main">
             <OurServices allFigureOurServices={allFigureOurServices}/>

@@ -27,12 +27,26 @@
 .main {
   @include flexi($display: flex, $justify-content: center, $flex-direction: column);
 
+  @media(max-width: 320px) {
+    overflow: hidden;
+  }
+
+
   .everyMiddleHeading {
     @include middleHeading;
     margin-top: 1%;
     margin-bottom: 7%;
     letter-spacing: 5px;
     text-transform: uppercase;
+    font-size: 4rem;
+
+    @media (max-width: 1441px) {
+      font-size: 3rem;
+    }
+
+    @media(max-width: 425px) {
+      font-size: 1.5rem;
+    }
   }
 
   .everySmallestHeading {
@@ -40,22 +54,43 @@
     margin-top: 1%;
     margin-bottom: 5%;
     letter-spacing: 3px;
-
+    font-size: 2rem;
     color: purple;
+
+    @media (max-width: 1441px) {
+      font-size: 2rem;
+
+    }
+
+    @media(max-width: 425px) {
+      font-size: 1rem;
+    }
   }
 
   .ourServices {
     @include flexi($display: flex, $flex-direction: column);
     margin-bottom: 1%;
-    height: 100vh;
+    min-height: 100vh;
     align-items: center;
     justify-content: center;
+    // @media (max-width: 425px) {
+    //   height: ;
 
+    // }
     &__allFigure {
       @include flexi($display: flex, $justify-content: center);
       text-align: center;
       width: 100%;
       justify-content: space-around;
+
+
+      @media (max-width: 1441px) {
+        width: 80%;
+      }
+
+      @media (max-width: 1025px) {
+        flex-wrap: wrap;
+      }
 
       .ourServices__container {
         background-color: white;
@@ -63,14 +98,42 @@
         border: 2px solid rgb(207, 198, 198);
         margin: 1%;
         transition: 0.5s;
+        font-size: 1.7rem;
+
+        @media (max-width: 1025px) {
+          width: 40%;
+          height: 40%;
+          font-size: 0.8rem;
+        }
+
+        @media(max-width: 425px) {
+          width: 60%;
+          font-size: 0.5rem;
+        }
 
         .ourServices__image {
           margin-top: 13%;
+
+          @media (max-width: 1025px) {
+            margin-top: 2%;
+
+          }
         }
 
         .ourServices__text {
-          font-size: 0.8rem;
+          font-size: 1.8rem;
           padding: 0 1% 0 1%;
+
+          @media (max-width: 1025px) {
+
+            font-size: 1.2rem;
+          }
+
+          @media(max-width: 425px) {
+            font-size: 0.8rem;
+            padding: 0 0.5% 0 0.5%;
+
+          }
         }
       }
 
@@ -88,34 +151,59 @@
     align-items: center;
     justify-content: center;
 
+    @media(max-width: 1025px) {
+      margin-bottom: 1%;
+    }
+
     &__allFigure {
       @include flexi($display: flex, $justify-content: center);
       text-align: center;
       width: 100%;
       justify-content: space-around;
 
+      @media (max-width: 1441px) {
+        width: 80%;
+
+      }
+
       .aboutUs__container {
         background-color: rgb(214, 211, 211);
         border-radius: 5%;
-        width: 150px;
+        width: 17%;
         margin: 1%;
         transition: 0.5s;
         position: relative;
         z-index: 0;
+
+        @media (max-width: 1441px) {
+          width: 20%;
+
+        }
 
         .aboutUs__image {
           margin-top: 13%;
           @include size(100%, auto);
           border-radius: 7%;
           z-index: 0;
+
         }
 
         .circle {
           @include position($position: absolute, $left:50%, $bottom: 20%);
           transform: translateX(-50%);
-          @include size(15px, 15px);
+          @include size(55px, 45px);
           background-color: rgb(69, 69, 204);
           border-radius: 50%;
+
+          @media(max-width: 1025px) {
+            @include size(20px, auto);
+
+          }
+
+          @media(max-width:321px) {
+            @include size(15px, 19px);
+
+          }
 
           &__tooltiptext {
             visibility: hidden;
@@ -153,7 +241,6 @@
 
   .ourCustomers {
     @include flexi($display: flex, $flex-direction: column);
-
     position: relative;
     height: 100vh;
     align-items: center;
@@ -167,22 +254,51 @@
     &__mainPart {
       @include flexi($display: flex, $justify-content: center);
       position: relative;
+      max-height: 50%;
+
+      @media(max-width: 1025px) {
+        overflow: auto;
+      }
+
 
       &-arrowLeft {
-        @include size(40px, 50px);
+        @include size(70px, auto);
         @include position($position: absolute, $left:15%, $right:null, $top: 25%, $bottom: null);
         cursor: pointer;
+
+        @media(max-width: 425px) {
+          @include size(40px, auto);
+
+        }
       }
 
       .ourCustomers__mainPart-arrowRight {
-        @include size(40px, 50px);
+        @include size(70px, auto);
         @include position($position: absolute, $right:15%, $top: 25%);
         cursor: pointer;
+
+        @media(max-width: 425px) {
+          @include size(40px, auto);
+
+        }
       }
 
       .ourCustomers__figure {
         text-align: center;
         flex-basis: 50%;
+
+        &-text {
+          font-size: 2.1rem;
+
+          @media (max-width: 1441px) {
+            font-size: 1.7rem;
+          }
+
+          @media (max-width: 425px) {
+            font-size: 8px;
+          }
+
+        }
 
         &-text::first-letter {
           color: red;
@@ -196,10 +312,14 @@
           &__span {
             @include position($position: absolute, $top: 0);
             display: inline-block;
-            @include size(8px, 8px);
+            @include size(2rem, 2rem);
             border-radius: 50%;
             margin: 10px 10px;
             background-color: grey;
+
+            @media(max-width: 425px) {
+              @include size(1rem, 1rem);
+            }
           }
 
           .dots__span.active {
@@ -227,23 +347,33 @@
             overflow: hidden;
             border-radius: 50%;
 
+            @media(max-width: 425px) {
+              @include size(40px, 40px);
+              width: 80%;
+              height: auto;
+            }
+
             .ourCustomers__figure-woman {
               @include size(80px, auto);
+
             }
           }
 
           .ourCustomers__figure-dataWomen {
             display: inline-block;
             margin-left: 2%;
-
-            &-bigerHeading {
-              margin-bottom: 1%;
-            }
-
-            &-smallerHeading {
-              margin-top: 1%;
-            }
           }
+
+          &-bigerHeading {
+            margin-bottom: 1%;
+
+          }
+
+          &-smallerHeading {
+            margin-top: 1%;
+
+          }
+
         }
       }
     }

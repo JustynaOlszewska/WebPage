@@ -1,7 +1,9 @@
+
 import img14 from "../img/girl-1208207_640.jpg";
 import img15 from "../img/woman-3055841_640.jpg";
 import img16 from "../img/business-woman-2697954_640.jpg";
 
+ 
 
 export const slider = [
     {

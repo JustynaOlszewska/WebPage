@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import "../styles/sass/_header.scss";
 
-function SimpleSlider(props) {
+function SimpleSlider() {
     
 
    const settings = {

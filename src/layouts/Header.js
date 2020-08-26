@@ -1,4 +1,4 @@
-
+ 
 import React, { Component } from "react";
 import SimpleSlider from "../layouts/SimpleSlider.js";
 import "../styles/sass/_header.scss";

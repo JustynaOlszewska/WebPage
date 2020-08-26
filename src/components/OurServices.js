@@ -1,6 +1,7 @@
 import React from 'react';
-import AllFigure from "./AllFigure"
 import { allFigureOurServices } from "../data/allFigureOurServices"
+const AllFigure = React.lazy(() => import('./AllFigure'));
+
 
 const OurServices = () => {
 
@@ -8,7 +9,8 @@ const OurServices = () => {
         <section id="ourServices" className="ourServices">
             <h1 className="everyMiddleHeading">Our services</h1>
             <h4 className="everySmallestHeading">What we can do</h4>
-            <AllFigure allFigureOurServices={allFigureOurServices} />
+            <AllFigure allFigureOurServices={allFigureOurServices}/>
+            
         </section>
     );
 }

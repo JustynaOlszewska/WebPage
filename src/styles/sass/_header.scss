@@ -14,26 +14,31 @@
     @include size(30%, 100px);
     margin: 1% 1%;
 
+    & .header__logo-heading {
+      @media(max-width: 425px) {
+        display: none;
+      }
+    }
+
     &-img1 {
-      @include position($position: absolute, $left:29%);
+      @include position($position: absolute, $left:33%);
       z-index: 3;
     }
 
     &-img2 {
-      @include position($position:absolute, $left:27%, $top: 13%);
+      @include position($position:absolute, $left:51%, $top: 13%);
       z-index: 2;
     }
 
     &-img3 {
-      @include position($position: absolute, $left:28%, $top: 9%);
+      @include position($position: absolute, $left:32%, $top: 9%);
       width: 23px;
-      // border-radius: 5%;
       z-index: 1;
       transform: rotate(-60deg);
     }
 
     &-triangle {
-      @include position($position: absolute, $left:28%, $top: -2%);
+      @include position($position: absolute, $left: 32.5%, $top: -2%);
       @include size(0, 0);
       border-bottom: 30px solid rgb(255, 0, 119);
       border-top: 20px solid transparent;
@@ -54,10 +59,34 @@
   }
 
   &__menu {
-    @include position($position: absolute, $right:0, $top: 1%);
+    @include position($position: absolute, $right:10%, $top: 1%);
     z-index: 2;
     @include size(57%, 100px);
     margin: 1% 4% 0 1%;
+
+    @media (max-width: 1441px) {
+      @include position($position: absolute, $right:2%, $top: 1%);
+      width: 70%;
+
+
+    }
+
+    .hamburger {
+      @include position($position: absolute, $right:10%, $top: 1%);
+      width: 50px;
+      height: 50px;
+      display: none;
+
+      .fa-bars {
+        font-size: 30px;
+        color: white;
+        cursor: pointer;
+      }
+
+      @media (max-width: 1024px) {
+        display: block
+      }
+    }
 
     .list {
       @include position($position: absolute, $right:5px);
@@ -66,21 +95,80 @@
       @include flexi($display: flex, $justify-content: space-between);
       list-style-type: none;
 
+      @media (max-width: 1025px) {
+        display: block;
+        top: 20px;
+      }
+
+
       &__element {
         width: 20%;
         text-align: right;
 
+        @media(max-width: 1025px) {
+          position: relative;
+          width: 30%;
+          right: -200%;
+          text-align: left;
+          animation-name: slide;
+          animation-fill-mode: forwards;
+          animation-duration: 1.5s;
+
+          @keyframes slide {
+            from {
+              right: -200%
+            }
+
+            to {
+              right: -80%
+            }
+          }
+        }
+
+        @media(max-width:425px) {
+          @keyframes slide {
+            from {
+              right: -200%
+            }
+
+            to {
+              right: -55%
+            }
+          }
+        }
+        @media(max-width:321px) {
+          @keyframes slide {
+            from {
+              right: -200%
+            }
+
+            to {
+              right: -46%
+            }
+          }
+        }
         &-link {
           width: 100%;
           display: block;
           text-decoration: none;
           color: rgb(255, 255, 255);
+          font-size: 1.5rem;
+
+        }
+      }
+
+      @media (max-width: 1025px) {
+        .sleep {
+          display: none;
+        }
+
+        .active {
+          display: block;
+
         }
       }
     }
   }
-
-
 }
 
 .allButtons {
@@ -101,36 +189,42 @@
   display: flex !important;
   flex-direction: column;
   justify-content: center;
-
   align-items: center;
   text-align: center;
   height: 720px;
 
   h1 {
     text-shadow: 0 1px 20px rgba(0, 0, 0, 0.25);
-    font-weight: 700;
-    font-size: 60px;
+    font-size: 50px;
     color: #ffffff;
+    @media (max-width: 425px) {
+      font-size: 40px;
+    }
+    @media (max-width: 320px) {
+      font-size: 30px;
+    }
   }
 }
 
 .slide1 {
   background: url("../../img/keyboard1.jpg");
-  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
   height: 620px;
 
   h1 {
-    width: 530px;
+    width: 80%;
   }
 }
 
 .slide2 {
   background: url("../../img/keyboard2.jpg");
-  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
   height: 620px;
 
   h1 {
-    width: 810px;
+    width: 80%;
   }
 }
 
@@ -149,6 +243,7 @@
         width: 15px;
         color: #fff;
         opacity: 1;
+
       }
     }
   }
