@@ -70,19 +70,23 @@
   .ourServices {
     @include flexi($display: flex, $flex-direction: column);
     margin-bottom: 1%;
-    min-height: 100vh;
+    height: 100vh;
     align-items: center;
     justify-content: center;
-    // @media (max-width: 425px) {
-    //   height: ;
 
-    // }
+
+    @media(max-width: 769px) {
+      height: 150vh;
+    }
+    @media(max-width: 425px) {
+      height: 200vh;
+    }
+
     &__allFigure {
       @include flexi($display: flex, $justify-content: center);
       text-align: center;
       width: 100%;
       justify-content: space-around;
-
 
       @media (max-width: 1441px) {
         width: 80%;
@@ -105,12 +109,16 @@
           height: 40%;
           font-size: 0.8rem;
         }
-
-        @media(max-width: 425px) {
+        @media(max-width: 769px) {
+          height: 40vh;
+        }
+         @media(max-width: 425px) {
           width: 60%;
           font-size: 0.5rem;
         }
-
+        @media(max-width: 375px) {
+         height: 30vh;
+        }
         .ourServices__image {
           margin-top: 13%;
 
@@ -146,15 +154,25 @@
   .aboutUs {
     @include flexi($display: flex, $flex-direction: column);
     background-color: rgb(214, 211, 211);
-    width: 100;
+    width: 100%;
     height: 100vh;
     align-items: center;
     justify-content: center;
-
+   
     @media(max-width: 1025px) {
       margin-bottom: 1%;
+      // height: 60vh;
     }
 
+    @media(max-width: 769px) {
+      height: 100vh;
+    }
+    @media(max-width: 426px) {
+      height: 60vh;
+    }
+    @media(max-width: 375px) {
+     height: 230vh;
+    }
     &__allFigure {
       @include flexi($display: flex, $justify-content: center);
       text-align: center;
@@ -164,6 +182,10 @@
       @media (max-width: 1441px) {
         width: 80%;
 
+      }
+
+      @media(max-width: 376px) {
+        flex-wrap: wrap;
       }
 
       .aboutUs__container {
@@ -178,6 +200,10 @@
         @media (max-width: 1441px) {
           width: 20%;
 
+        }
+
+        @media(max-width: 376px) {
+          width: 50%;
         }
 
         .aboutUs__image {
@@ -200,7 +226,7 @@
 
           }
 
-          @media(max-width:321px) {
+          @media(max-width:375px) {
             @include size(15px, 19px);
 
           }
@@ -242,10 +268,13 @@
   .ourCustomers {
     @include flexi($display: flex, $flex-direction: column);
     position: relative;
-    height: 100vh;
+    height: 130vh;
     align-items: center;
     justify-content: center;
 
+    @media(max-width: 426px) {
+      height: 100vh;
+    }
     &__quote {
       @include position($position: absolute, $left:50%);
       transform: translateX(-50%);
@@ -263,7 +292,7 @@
 
       &-arrowLeft {
         @include size(70px, auto);
-        @include position($position: absolute, $left:15%, $right:null, $top: 25%, $bottom: null);
+        @include position($position: absolute, $left:15%, $right: null, $top: 25%, $bottom: null);
         cursor: pointer;
 
         @media(max-width: 425px) {
@@ -348,9 +377,7 @@
             border-radius: 50%;
 
             @media(max-width: 425px) {
-              @include size(40px, 40px);
               width: 80%;
-              height: auto;
             }
 
             .ourCustomers__figure-woman {
@@ -362,6 +389,7 @@
           .ourCustomers__figure-dataWomen {
             display: inline-block;
             margin-left: 2%;
+
           }
 
           &-bigerHeading {
@@ -378,4 +406,5 @@
       }
     }
   }
+
 }
