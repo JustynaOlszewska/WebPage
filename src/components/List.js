@@ -23,9 +23,6 @@ class List extends Component {
              default:
               return
        }
-
-                       
-
                     }
     render() { 
             const { active } = this.state
