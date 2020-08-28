@@ -28,7 +28,6 @@ class List extends Component {
 
                     }
     render() { 
-console.log('t', this.state.active)
             
                     return (
                         <nav id="gora" className="header__menu">
@@ -44,23 +43,3 @@ console.log('t', this.state.active)
 }
  
 export default List;
-
-// const List = (props) => {
-//    const handleClickHamburger=()=> {
-//        console.log('vlik')
-// return (
-//     <ElementList class="active" nameElementList={props.nameElementList} />
-// )
-//     }
-//     return (
-//         <nav id="gora" className="header__menu">
-
-//             <ElementList nameElementList={props.nameElementList} />
-//             <div onClick={handleClickHamburger} className="hamburger" >
-//                 <i className="fas fa-bars"></i>
-//             </div>
-//         </nav>
-//     );
-// }
-
-// export default List;

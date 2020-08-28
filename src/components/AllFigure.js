@@ -1,8 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const AllFigure = (props) => {
+const AllFigure = ({allFigureOurServices}) => {
   
-    let newAllFigure = props.allFigureOurServices.map(element=> {
+    let newAllFigure = allFigureOurServices.map(element=> {
         return(
             <figure key={element.texth4} className="ourServices__container">
             <img className="ourServices__image" src={element.img} alt={element.alt} />
@@ -22,4 +23,7 @@ const AllFigure = (props) => {
     );
 }
  
+AllFigure.propTypes = {
+  allFigure: PropTypes.string
+}
 export default AllFigure;

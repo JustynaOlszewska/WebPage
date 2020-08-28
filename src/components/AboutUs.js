@@ -6,7 +6,7 @@ import { name } from "../data/pesonList";
 const AboutUs = () => {
   const nameImgList = name.map(person => {
     return (
-      <figure className="aboutUs__container aboutUs__container-image">
+      <figure key={person} id={person} className="aboutUs__container aboutUs__container-image">
         <img className="aboutUs__image" src={img10} alt="man" />
         <div className="circle">
           <span className="circle__tooltiptext">Project manager</span>

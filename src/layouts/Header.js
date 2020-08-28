@@ -19,7 +19,8 @@ class Header extends Component {
         className="header__logo-img1"
         src={image}
         alt="img1"
-       
+       id={image}
+       key={image}
       />
       )
     })
