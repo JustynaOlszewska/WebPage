@@ -28,11 +28,11 @@ class List extends Component {
 
                     }
     render() { 
-            
+            const { active } = this.state
                     return (
                         <nav id="gora" className="header__menu">
                 
-                            <ElementList active={this.state.active} nameElementList={nameElementList} />
+                            <ElementList active={active} nameElementList={nameElementList} />
                             <div onClick={this.handleClickHamburger} className="hamburger" >
                                 <i className="fas fa-bars"></i>
                             </div>

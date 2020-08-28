@@ -34,7 +34,6 @@ class Main extends Component {
         });
       }
      changeSlideArrow = () => {
-  //  console.log(this.state.slider)
         this.index++;
         if (this.index < slider.length) {
           this.setState({
@@ -84,11 +83,12 @@ class Main extends Component {
         clearInterval(this.arrowInterval);
       }
     render() { 
+      const { smallerHeading, image, bigerHeading, text } = this.state
         return (  
             <main className="main">
             <OurServices allFigureOurServices={allFigureOurServices}/>
 <AboutUs />
-<OurCustomers  index={this.index} smallerHeading={this.state.smallerHeading}bigerHeading={this.state.bigerHeading} image={this.state.image} text={this.state.text} click={this.changeSlideClick}/>
+<OurCustomers  index={this.index} smallerHeading={smallerHeading}bigerHeading={bigerHeading} image={image} text={text} click={this.changeSlideClick}/>
           </main>
         );
     }

@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const ElementList = ({ nameElementList, active }) => {
-    const newList = nameElementList.map(element => {
+    const newList = nameElementList.map(({key, href, name }) => {
 
         return (
-            <li id={element.key} key={element.href} className={`list__element ${active}`}>
-                <a className={`list__element-link ${active}`} href={element.href}>
-                    {element.name}
+            <li id={key} key={href} className={`list__element ${active}`}>
+                <a className={`list__element-link ${active}`} href={href}>
+                    {name}
                 </a>
             </li>
         )
