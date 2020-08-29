@@ -1,17 +1,87 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { listArrowQuote } from "../data/arrowAndQuote";
-import PropTypes from 'prop-types';
-const OurCustomers = ({ click, text, image, bigerHeading, smallerHeading, index }) => {
+import { slider } from "../data/slider"
 
 
-  return (
-    <section id="customers" className="ourCustomers">
+class OurCustomers extends Component {
+  state = { 
+    slider: [...slider],
+
+    text: slider[0].text,
+    image: slider[0].img,
+    bigerHeading: slider[0].bigerHeading,
+    smallerHeading: slider[0].smallerHeading,
+   };
+   index = 0;
+
+   componentDidMount() {
+     this.arrowInterval = setInterval(this.changeSlideArrow, 3000);
+   }
+   getData() {
+     this.setState({
+       slider: [...slider]
+     });
+   }
+   changeSlideArrow = () => {
+     this.index++;
+     if (this.index < slider.length) {
+       this.setState({
+ 
+         image: slider[this.index].img,
+         text: slider[this.index].text,
+         bigerHeading: slider[this.index].bigerHeading,
+         smallerHeading: slider[this.index].smallerHeading
+       });
+     } else if (this.index >= slider.length - 1) {
+       this.index = 0;
+       this.setState({
+         image: slider[this.index].img,
+         text: slider[this.index].text,
+         bigerHeading: slider[this.index].bigerHeading,
+         smallerHeading: slider[this.index].smallerHeading
+       });
+     }
+ 
+   };
+   changeSlideClick = type => {
+     clearInterval(this.arrowInterval);
+     if (type === "left") {
+       this.index--;
+       if (this.index >= 0) {
+         this.setState({
+           text: slider[this.index].text,
+           image: slider[this.index].img,
+           bigerHeading: slider[this.index].bigerHeading,
+           smallerHeading: slider[this.index].smallerHeading
+         });
+       } else if (this.index < 0) {
+         this.index = slider.length - 1;
+         this.setState({
+           text: slider[this.index].text,
+           image: slider[this.index].img,
+           bigerHeading: slider[this.index].bigerHeading,
+           smallerHeading: slider[this.index].smallerHeading
+         });
+       }
+     } else if (type === "right") {
+       this.changeSlideArrow();
+     }
+     this.arrowInterval = setInterval(this.changeSlideArrow, 3000);
+   };
+   componentWillUnmount() {
+     clearInterval(this.arrowInterval);
+   }
+  render() { 
+    const { smallerHeading, image, bigerHeading, text } = this.state
+
+    return (
+      <section id="customers" className="ourCustomers">
       <h1 className="everyMiddleHeading">Our customers</h1>
       <h4 className="everySmallestHeading">Testimonials</h4>
       <img className="ourCustomers__quote" src={listArrowQuote[0].img13} alt="quote" />
       <div className="ourCustomers__mainPart">
         <img
-          onClick={() => click('left')}
+          onClick={()=>this.changeSlideClick('left')}
           className="ourCustomers__mainPart-arrowLeft"
           src={listArrowQuote[0].img11}
           loading="lazy"
@@ -41,24 +111,24 @@ const OurCustomers = ({ click, text, image, bigerHeading, smallerHeading, index 
           <div className="dots">
             <span
               className={
-                index === 0 ? "dots__span active" : "dots__span"
+                this.index === 0 ? "dots__span active" : "dots__span"
               }
             ></span>
             <span
               className={
-                index === 1 ? "dots__span active" : "dots__span"
+                this.index === 1 ? "dots__span active" : "dots__span"
               }
             ></span>
             <span
               className={
-                index === 2 ? "dots__span active" : "dots__span"
+                this.index === 2 ? "dots__span active" : "dots__span"
               }
             ></span>
           </div>
         </figure>
 
         <img
-          onClick={() => click('right')}
+          onClick={()=>this.changeSlideClick('right')}
           className="ourCustomers__mainPart-arrowRight"
           src={listArrowQuote[0].img12}
           loading="lazy"
@@ -67,15 +137,9 @@ const OurCustomers = ({ click, text, image, bigerHeading, smallerHeading, index 
         />
       </div>
     </section>
-  );
-
-}
-OurCustomers.propTypes = {
-  click: PropTypes.func.isRequired,
-  text: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
-  bigerHeading:  PropTypes.string.isRequired,
-  smallerHeading: PropTypes.string.isRequired,
-  index: PropTypes.number.isRequired,
-}
+      );
+  }
+   }
+ 
 export default OurCustomers;
+

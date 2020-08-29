@@ -3,10 +3,12 @@ import img10 from "../img/man-537136_640.jpg";
 import { name } from "../data/pesonList";
 
 const AboutUs = () => {
+
   const nameImgList = name.map(person => {
-  console.log('person', person)
+           console.log('person', name, img10)
+
     return (
-      name.length ? 
+
       <figure key={person} id={person} className="aboutUs__container aboutUs__container-image">
         <img className="aboutUs__image" src={img10} alt="man" />
         <div className="circle">
@@ -15,8 +17,7 @@ const AboutUs = () => {
         <figcaption>
           <h4 className="aboutUs__heading">{person}</h4>
         </figcaption>
-      </figure> :
-      <div>This list is empty</div>
+      </figure> 
     )
 
   })

@@ -11,8 +11,6 @@ import { nameElementList } from "../data/nameElementList";
 class Header extends Component {
 
   render() {
-
-
     const newLogoImages = logoImages.map(image=> {
       return(
         <img
