@@ -1,2 +1,0 @@
-(this.webpackJsonpescola=this.webpackJsonpescola||[]).push([[8],{63:function(e,a,n){"use strict";n.r(a);var r=n(0),s=n.n(r),t=n(46),c=s.a.lazy((function(){return n.e(7).then(n.bind(null,61))}));a.default=function(){return s.a.createElement("section",{id:"ourServices",className:"ourServices"},s.a.createElement("h1",{className:"everyMiddleHeading"},"Our services"),s.a.createElement("h4",{className:"everySmallestHeading"},"What we can do"),s.a.createElement(c,{allFigureOurServices:t.a}))}}}]);
-//# sourceMappingURL=8.0acd7ab8.chunk.js.map
